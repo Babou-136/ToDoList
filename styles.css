@@ -1,0 +1,13 @@
+ul {
+  list-style: none; /* Supprime les puces */
+  padding: 0;        /* Supprime le retrait gauche par défaut */
+}
+
+li {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  border-bottom: 1px solid #ddd;
+}
