@@ -4,6 +4,12 @@ const text_task = document.getElementById("new_task");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const li = document.createElement("li");
+
+    const contentWrapper = document.createElement("div");
+    contentWrapper.style.display = "flex";
+    contentWrapper.style.alignItems = "center";
+    contentWrapper.style.gap = "8px";
+
     const text = text_task.value.trim();
     if (text === "")
         return;
@@ -11,16 +17,25 @@ form.addEventListener("submit", (e) => {
     const task_added = document.createElement("span");
     task_added.textContent = text;
 
-    const done = document.createElement("button");
-    done.textContent = "x";
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
 
-    done.addEventListener("click", () => {
-        task_added.style.textDecoration = "line-through";
+    const label = document.createElement("label");
+    label.appendChild(checkbox);
+    label.appendChild(task_added);
+
+    contentWrapper.appendChild(label);
+
+    const delete_btn = document.createElement("button");
+    delete_btn.classList.add("delete_btn")
+    delete_btn.addEventListener("click", () => {
+        document.getElementById("ul").removeChild(li);
     })
 
-    li.appendChild(task_added);
-    li.appendChild(done);
+    li.appendChild(contentWrapper);
+    li.appendChild(delete_btn);
     text_task.value = "";
 
     document.getElementById("ul").appendChild(li);
+    localStorage.setItem()
 })

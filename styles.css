@@ -1,13 +1,102 @@
 ul {
-  list-style: none; /* Supprime les puces */
-  padding: 0;        /* Supprime le retrait gauche par défaut */
+    list-style: none;
+    padding: 0;
 }
 
 li {
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5em;
-  border-bottom: 1px solid #ddd;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+[type="checkbox"] {
+    opacity: 0;
+}
+
+[type="checkbox"] + span {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: inline-block;
+    color: #ffffff;
+    line-height: 25px;
+}
+
+[type="checkbox"] + span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    outline: 2px solid black;
+    background: white;
+}
+
+[type="checkbox"]:checked + span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    outline: 2px solid #5fd25f;
+    background: white;
+}
+
+[type="checkbox"]:checked + span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    background-image: url(images/trans-check.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scale(1);
+    opacity: 1;
+    transition: all .3s ease;
+}
+
+[type="checkbox"]:not(:checked) + span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    background-image: url(images/trans-check.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+[type="button"] {
+    opacity: 0;
+}
+
+.delete_btn {
+    background: url(images/delete.png) no-repeat center;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
 }
