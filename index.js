@@ -45,9 +45,6 @@ function renderTask(task) {
     document.getElementById("ul").appendChild(li);
 }
 
-
-
-
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const li = document.createElement("li");
@@ -64,7 +61,8 @@ form.addEventListener("submit", (e) => {
     const task_added = document.createElement("span");
     task_added.textContent = text;
 
-    tasks.push({ text, done: false });
+    const task = {text, done: false};
+    tasks.push(task);
     localStorage.setItem("todolist", JSON.stringify(tasks));
 
     const checkbox = document.createElement("input");
@@ -80,6 +78,8 @@ form.addEventListener("submit", (e) => {
     delete_btn.classList.add("delete_btn")
     delete_btn.addEventListener("click", () => {
         document.getElementById("ul").removeChild(li);
+        tasks = tasks.filter(t => t !== task);
+        localStorage.setItem("todolist", JSON.stringify(tasks));
     })
 
     li.appendChild(contentWrapper);
