@@ -84,14 +84,18 @@ li {
 }
 
 .delete_btn {
-  background: url(images/delete.png) no-repeat center;
-  background-size: contain;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.delete_icon {
   width: 20px;
   height: 20px;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+  display: block;
 }
+
 
 h1 {
   text-align: center;
