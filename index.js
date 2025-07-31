@@ -33,6 +33,12 @@ function renderTask(task) {
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("delete_btn");
 
+  const deleteIcon = document.createElement("img");
+  deleteIcon.src = "images/delete.png";
+  deleteIcon.alt = "Supprimer";
+  deleteIcon.classList.add("delete_icon");
+  deleteBtn.appendChild(deleteIcon);
+
   checkbox.addEventListener("change", () => {
     task.done = checkbox.checked;
     localStorage.setItem("todolist", JSON.stringify(allTasks));
