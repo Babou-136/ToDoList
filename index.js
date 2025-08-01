@@ -30,13 +30,16 @@ function renderTask(task) {
   label.appendChild(taskSpan);
   contentWrapper.appendChild(label);
 
+  const dateBtn = document.createElement("input");
+  dateBtn.type = "date";
+
   const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("delete_btn");
+  deleteBtn.classList.add("deleteBtn");
 
   const deleteIcon = document.createElement("img");
   deleteIcon.src = "images/delete.png";
   deleteIcon.alt = "Supprimer";
-  deleteIcon.classList.add("delete_icon");
+  deleteIcon.classList.add("deleteIcon");
   deleteBtn.appendChild(deleteIcon);
 
   checkbox.addEventListener("change", () => {
@@ -51,6 +54,7 @@ function renderTask(task) {
   });
 
   li.appendChild(contentWrapper);
+  li.appendChild(dateBtn);
   li.appendChild(deleteBtn);
 
   taskList.appendChild(li);

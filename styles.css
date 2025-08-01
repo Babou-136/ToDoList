@@ -83,14 +83,14 @@ li {
   opacity: 0;
 }
 
-.delete_btn {
+.deleteBtn {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
 }
 
-.delete_icon {
+.deleteIcon {
   width: 20px;
   height: 20px;
   display: block;
