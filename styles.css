@@ -12,6 +12,12 @@ li {
   border-bottom: 1px solid #ddd;
 }
 
+[type="text"] {
+  border-radius: 15px;
+  height: 20px;
+  width: 250px;
+}
+
 [type="checkbox"] {
   opacity: 0;
 }
@@ -34,6 +40,7 @@ li {
   height: 18px;
   outline: 2px solid black;
   background: white;
+  border-radius: 15px;
 }
 
 [type="checkbox"]:checked+span::before {
@@ -103,4 +110,14 @@ h1 {
 
 form {
   text-align: center;
+}
+
+[type="date"] {
+  border-radius: 15px;
+}
+
+[type="submit"] {
+  border-radius: 15px;
+  height: 30px;
+  width: 30px;
 }
