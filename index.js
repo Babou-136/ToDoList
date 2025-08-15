@@ -14,12 +14,12 @@ function renderTask(task) {
   const li = document.createElement("li");
 
   const contentWrapper = document.createElement("div");
-  contentWrapper.style.display = "flex";
   contentWrapper.style.alignItems = "center";
   contentWrapper.style.gap = "8px";
 
   const taskSpan = document.createElement("span");
   taskSpan.textContent = task.text;
+  taskSpan.title = task.text;
 
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
@@ -32,6 +32,10 @@ function renderTask(task) {
 
   const dateBtn = document.createElement("input");
   dateBtn.type = "date";
+
+  const descriptionInput = document.createElement("input");
+  descriptionInput.type = "textContent"
+  descriptionInput.classList.add("descriptionInput")
 
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("deleteBtn");
@@ -55,6 +59,7 @@ function renderTask(task) {
 
   li.appendChild(contentWrapper);
   li.appendChild(dateBtn);
+  li.appendChild(descriptionInput);
   li.appendChild(deleteBtn);
 
   taskList.appendChild(li);
